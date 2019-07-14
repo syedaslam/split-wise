@@ -13,6 +13,9 @@ import { CreateGroupComponent } from './create-group/create-group.component';
   declarations: [FriendsComponent, GroupsComponent, ActivityComponent, AddExpenseComponent, AddFriendsComponent, CreateGroupComponent],
   imports: [
     CommonModule
+  ],
+  exports: [
+    FriendsComponent, GroupsComponent, ActivityComponent, AddExpenseComponent, AddFriendsComponent, CreateGroupComponent
   ]
 })
 export class HomeModule { }

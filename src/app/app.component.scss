@@ -8,3 +8,9 @@
 .title {
     letter-spacing: 8px;
 }
+
+
+::ng-deep .custom-lable .mat-tab-label{
+    color: white !important; 
+    font-weight: 600; 
+}

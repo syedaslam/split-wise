@@ -12,9 +12,15 @@
     </div>
 </div>
 <div class="header">
-    <mat-tab-group mat-stretch-tabs animationDuration="0ms" class="example-stretched-tabs ">
-        <mat-tab label="First">Content 1<a></a></mat-tab>
-        <mat-tab label="Second"> Content 2 </mat-tab>
-        <mat-tab label="Third"> Content 3 </mat-tab>
+    <mat-tab-group mat-stretch-tabs animationDuration="0ms" class="example-stretched-tabs custom-lable">
+        <mat-tab label="Friends">
+                <app-friends></app-friends>
+        </mat-tab>
+        <mat-tab label="Groups">
+            <app-groups></app-groups>
+        </mat-tab>
+        <mat-tab label="Activity">
+            <app-activity></app-activity>
+        </mat-tab>
       </mat-tab-group>
 </div>
