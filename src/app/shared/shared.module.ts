@@ -1,22 +1,26 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import {MatTabsModule} from '@angular/material/tabs';
 
 
+
+
+const chareMyMaterialdesignDepen =
+  [
+    BrowserAnimationsModule,
+    MatIconModule,
+    MatButtonModule,MatTabsModule
+  ];
 
 
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule,
-    BrowserAnimationsModule,
-    MatIconModule,
-    MatButtonModule
+    chareMyMaterialdesignDepen
   ],
   exports: [
-    MatButtonModule, MatIconModule, BrowserAnimationsModule
-  ]
+    chareMyMaterialdesignDepen  ]
 })
 export class SharedModule { }

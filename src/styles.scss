@@ -1,4 +1,5 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import 'assets/css/variables';
 
 
 * {
@@ -7,9 +8,13 @@
 }
 
 body {
-
+    background-color: $app-bg-color;
+    
 }
 
+._material-icons{
+    color:white;
+}
 ._flex-box {
     display: flex;
     align-items: center;
@@ -38,13 +43,22 @@ body {
 ._ml-auto {
     margin-left: auto;
 }
-
-._p-10 {
+ ._margin{
+   margin: 2px;
+ }
+ ._margin-top-bottom{
+     margin:2px 0;
+}
+    ._margin-right-left{
+     margin:0 2px;
+}
+    
+    ._p-10 {
     padding: 10px;
 }
 
 ._p-5 {
-    padding: 5;
+    padding: 5px;
 }
 
 ._pl-10 {
@@ -53,4 +67,11 @@ body {
 
 ._w-100 {
     width: 100%;
+}
+._h-100{
+    height:100vh;
+}
+._shadow{
+    border: 1px;
+    box-shadow: 0px 5px 4px #888888;
 }
