@@ -6,13 +6,15 @@ import { ActivityComponent } from './activity/activity.component';
 import { AddExpenseComponent } from './add-expense/add-expense.component';
 import { AddFriendsComponent } from './add-friends/add-friends.component';
 import { CreateGroupComponent } from './create-group/create-group.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
 @NgModule({
   declarations: [FriendsComponent, GroupsComponent, ActivityComponent, AddExpenseComponent, AddFriendsComponent, CreateGroupComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    SharedModule
   ],
   exports: [
     FriendsComponent, GroupsComponent, ActivityComponent, AddExpenseComponent, AddFriendsComponent, CreateGroupComponent

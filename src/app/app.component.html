@@ -6,10 +6,15 @@
    <div class="title _material-icons" >SPLITWISE</div>
    
     <div class="_ml-auto">
-        <button mat-icon-button>
+        <button mat-icon-button [matMenuTriggerFor]="more">
             <mat-icon class='_material-icons'>more_vert</mat-icon>
         </button>
     </div>
+
+    <mat-menu #more="matMenu" yPosition="above">
+        <button mat-menu-item>Add friends on Splitwise</button>
+        <button mat-menu-item>Create a group</button>
+    </mat-menu>
 </div>
 <div class="header">
     <mat-tab-group mat-stretch-tabs animationDuration="0ms" class="example-stretched-tabs

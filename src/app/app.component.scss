@@ -7,18 +7,26 @@
 
 .title {
     letter-spacing: 8px;
+    color: white;
 }
-
 
 ::ng-deep .custom-lable .mat-tab-label{
     color: white !important; 
     font-weight: 600; 
 }
-::ng-deep  .mat-ink-bar {
-    background-color: #ffffff;
+
+::ng-deep .mat-ink-bar {
+    background-color: #ffffff !important;
 }
+
 .mat-tab-header{
     border: 1px;
     box-shadow: 5px 5px 4px red;
+}
 
+::ng-deep .mat-menu-panel {
+    background-color: white !important;
+    .mat-menu-item {
+        color: black !important;
+    }
 }

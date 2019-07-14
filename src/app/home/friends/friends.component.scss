@@ -1,7 +1,20 @@
 @import '../../../assets/css/variables';
 
 .friends {
-    height: calc(100vh - 110px);
+    // height: calc(100vh - 110px);
     background-color: white;
 
+}
+
+.default-logo {
+    height: 40px;
+    width: 40px;
+    background-position: center !important;
+    background-size: cover !important;
+    border-radius: 50px;
+    border: 3px solid $app-theam;
+}
+
+.header-cont {
+    height: 60px;
 }

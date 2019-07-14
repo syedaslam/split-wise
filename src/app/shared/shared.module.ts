@@ -3,6 +3,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatMenuModule} from '@angular/material/menu';
+
 
 
 
@@ -11,7 +13,7 @@ const chareMyMaterialdesignDepen =
   [
     BrowserAnimationsModule,
     MatIconModule,
-    MatButtonModule,MatTabsModule
+    MatButtonModule,MatTabsModule, MatMenuModule
   ];
 
 
