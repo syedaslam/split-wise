@@ -14,3 +14,11 @@
     color: white !important; 
     font-weight: 600; 
 }
+::ng-deep  .mat-ink-bar {
+    background-color: #ffffff;
+}
+.mat-tab-header{
+    border: 1px;
+    box-shadow: 5px 5px 4px red;
+
+}
