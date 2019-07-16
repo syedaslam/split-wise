@@ -1,0 +1,42 @@
+@import '../../../assets/css/variables';
+
+.header {
+    background-color: $app-theam;
+}
+
+
+.sidenav {
+    top: 0;
+    border-right: 1px solid gray;
+    position: absolute;
+    height: 100vh;
+    width: 25vw;
+    z-index: 10;
+}
+
+.sidenav-header {
+    height: 200px;
+    color: white;
+    background-color: $app-theam;
+    padding: 10px;
+}
+
+.default-logo {
+    height: 40px;
+    width: 40px;
+    background-position: center !important;
+    background-size: cover !important;
+    border-radius: 50px;
+    border: 3px solid $app-theam;
+}
+
+.sidenav-cont {
+    height: calc(100% - 205px);
+    color: black;
+}
+
+.items {
+    button {
+        text-align: left;
+    }
+}

@@ -1,0 +1,11 @@
+@import '../../../assets/css/variables';
+
+.header {
+    background-color: $app-theam;
+}
+
+.title {
+    letter-spacing: 8px;
+    color: white;
+    font-weight: 900;
+}

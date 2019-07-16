@@ -1,5 +1,5 @@
-<!-- <div class="header _flex-box _w-100 _p-10">
-    <button mat-icon-button (click)="toggle = !toggle">
+<div class="header _flex-box _w-100 _p-10">
+    <button mat-icon-button (click)="togglee=true">
         <mat-icon class='_material-icons'>menu</mat-icon>
     </button>
     <div class="title _material-icons">SPLITWISE</div>
@@ -12,39 +12,12 @@
         <button mat-menu-item>Add friends on Splitwise</button>
         <button mat-menu-item>Create a group</button>
     </mat-menu>
-</div> -->
-
-
-
-<app-add-expense></app-add-expense>
-
-
-<!-- 
-<app-main-header></app-main-header>
-<div class="header">
-    <mat-tab-group mat-stretch-tabs animationDuration="0ms" class="example-stretched-tabs
-     custom-lable  .mat-tab-header">
-        <mat-tab label="Friends">
-            <app-friends></app-friends>
-        </mat-tab>
-        <mat-tab label="Groups">
-            <app-groups></app-groups>
-        </mat-tab>
-        <mat-tab label="Activity">
-            <app-activity></app-activity>
-        </mat-tab>
-    </mat-tab-group>
 </div>
-<app-fab-add-expense></app-fab-add-expense> -->
 
 
 
 
-
-
-
-
-<!-- <div class="sidenav _shadow" *ngIf="toggle">
+<div class="sidenav _shadow" *ngIf="togglee">
     <div class="sidenav-header">
         <div style="background: url(/assets/images/split-wise-logo.png)" class="default-logo"></div>
         <div style="font-weight: 500">Vishnu</div>
@@ -54,7 +27,8 @@
         <div *ngFor="let item of list" class="items">
             <button mat-button class="_w-100">
                <mat-icon>{{item.imageUrl}}</mat-icon> {{item.name}}
+               {{item.link}}
             </button>
         </div>
     </div>
-</div> -->
+</div>

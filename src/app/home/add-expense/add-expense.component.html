@@ -1,1 +1,15 @@
-<p>add-expense works!</p>
+<div class="header _flex-box _w-100 _p-10">
+    <button mat-icon-button (click)="togglee=true">
+        <mat-icon class='_material-icons'>arrow_back</mat-icon>
+    </button>
+    <div class="title _material-icons _margin_left">ADD EXPENSE</div>
+    <div class="_ml-auto">
+        <button mat-icon-button [matMenuTriggerFor]="more">
+            <p class='_material-icons'>SAVE</p>
+        </button>
+    </div>
+    <mat-menu #more="matMenu" yPosition="above">
+        <button mat-menu-item>Add friends on Splitwise</button>
+        <button mat-menu-item>Create a group</button>
+    </mat-menu>
+</div>

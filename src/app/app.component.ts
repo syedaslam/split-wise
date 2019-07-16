@@ -12,15 +12,19 @@ export class AppComponent {
   list = [
     {
       name: 'Home',
-      link: 'home-page'
+      link: 'home-page',
+      imageUrl:"home"
     },
     {
       name: 'Settings',
-      link: 'home-page'
+      link: 'home-page',
+      imageUrl:"settings"
+      
     },
     {
       name: 'Log out',
-      link: 'home-page'
+      link: 'home-page',
+      imageUrl:"power_settings_new"
     }
   ]
 }
