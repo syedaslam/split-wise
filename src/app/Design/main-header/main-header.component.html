@@ -19,7 +19,14 @@
 
 <div class="sidenav _shadow" *ngIf="togglee">
     <div class="sidenav-header">
-        <div style="background: url(/assets/images/split-wise-logo.png)" class="default-logo"></div>
+        <div class="_flex-box _mb-10">
+            <div style="background: url(/assets/images/split-wise-logo.png)" class="default-logo"></div>
+            <div class="_ml-auto">
+                <button mat-icon-button (click)="togglee = false">
+                    <mat-icon>arrow_back_ios</mat-icon>
+                </button>
+            </div>
+        </div>
         <div style="font-weight: 500">Vishnu</div>
         <div style="font-size: 14px">vishu@gmail.com</div>
     </div>

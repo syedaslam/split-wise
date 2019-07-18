@@ -1,26 +1,5 @@
-<!-- <div class="header _flex-box _w-100 _p-10">
-    <button mat-icon-button (click)="toggle = !toggle">
-        <mat-icon class='_material-icons'>menu</mat-icon>
-    </button>
-    <div class="title _material-icons">SPLITWISE</div>
-    <div class="_ml-auto">
-        <button mat-icon-button [matMenuTriggerFor]="more">
-            <mat-icon class='_material-icons'>more_vert</mat-icon>
-        </button>
-    </div>
-    <mat-menu #more="matMenu" yPosition="above">
-        <button mat-menu-item>Add friends on Splitwise</button>
-        <button mat-menu-item>Create a group</button>
-    </mat-menu>
-</div> -->
-
-
-
-<app-add-expense></app-add-expense>
-
-
-<!-- 
-<app-main-header></app-main-header>
+<ng-container *ngIf="!isAddExpns">
+    <app-main-header></app-main-header>
 <div class="header">
     <mat-tab-group mat-stretch-tabs animationDuration="0ms" class="example-stretched-tabs
      custom-lable  .mat-tab-header">
@@ -35,26 +14,9 @@
         </mat-tab>
     </mat-tab-group>
 </div>
-<app-fab-add-expense></app-fab-add-expense> -->
+</ng-container>
+
+<app-add-expense *ngIf="isAddExpns"></app-add-expense>
 
 
-
-
-
-
-
-
-<!-- <div class="sidenav _shadow" *ngIf="toggle">
-    <div class="sidenav-header">
-        <div style="background: url(/assets/images/split-wise-logo.png)" class="default-logo"></div>
-        <div style="font-weight: 500">Vishnu</div>
-        <div style="font-size: 14px">vishu@gmail.com</div>
-    </div>
-    <div class="sidenav-cont">
-        <div *ngFor="let item of list" class="items">
-            <button mat-button class="_w-100">
-               <mat-icon>{{item.imageUrl}}</mat-icon> {{item.name}}
-            </button>
-        </div>
-    </div>
-</div> -->
+<app-fab-add-expense (click)="isAddExpns = true" *ngIf="!isAddExpns"></app-fab-add-expense>

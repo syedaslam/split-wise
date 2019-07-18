@@ -46,18 +46,33 @@ body {
  ._margin{
    margin: 2px;
  }
+
+ ._m-10 {
+     margin: 10px;
+ }
+
+ ._m-s {
+     margin: 0 10px;
+ }
  ._margin-top-bottom{
      margin:2px 0;
 }
-    ._margin-right-left{
+
+._m-r-l{
      margin:0 10px;
 }
 
-._margin_left{
-    margin:0 0 0 10px
+._m-l{
+    margin-left: 10px
+}
+._mt-10 {
+    margin-top: 10px;
+}
+._mb-10 {
+    margin-bottom: 10px;
 }
     
-    ._p-10 {
+._p-10 {
     padding: 10px;
 }
 
