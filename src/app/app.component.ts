@@ -7,11 +7,13 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class AppComponent {
 
-  @Input() inputData: any;
-  @Output() outputData = new EventEmitter();
+  //flower:string="rose";
+
+
+replied:boolean;
   title = 'split-wise';
   toggle: (boolean) = false;
-  isAddExpns: boolean;
+  isAddExpns: boolean=false;
 
   list = [
     {
@@ -31,4 +33,12 @@ export class AppComponent {
       imageUrl:"power_settings_new"
     }
   ]
+
+
+  waitWhatelse(rep){
+    this.replied=rep;
+    console.log(rep);
+ console.log("hey come");
+  }
+
 }

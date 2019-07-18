@@ -19,4 +19,4 @@
 <app-add-expense *ngIf="isAddExpns"></app-add-expense>
 
 
-<app-fab-add-expense (click)="isAddExpns = true" *ngIf="!isAddExpns"></app-fab-add-expense>
+<app-fab-add-expense [gettingDataFromApp]="isAddExpns" (resp)="waitWhatelse($event)" (click)="isAddExpns =replied" *ngIf="!isAddExpns"></app-fab-add-expense>
