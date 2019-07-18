@@ -5,8 +5,8 @@ import { MatButtonModule } from '@angular/material/button';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatMenuModule} from '@angular/material/menu';
 import { FabAddExpenseComponent } from './components/fab-add-expense/fab-add-expense.component';
-import { HomeModule } from '../home/home.module';
-import { AppModule } from '../app.module';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 
 
@@ -16,7 +16,8 @@ const chareMyMaterialdesignDepen =
   [
     BrowserAnimationsModule,
     MatIconModule,
-    MatButtonModule,MatTabsModule, MatMenuModule
+    MatButtonModule,MatTabsModule, MatMenuModule,
+    MatInputModule, MatFormFieldModule
   ];
 
 

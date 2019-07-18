@@ -1,5 +1,5 @@
 <div class="header _flex-box _w-100 _p-10">
-    <button mat-icon-button (click)="togglee=true">
+    <button mat-icon-button (click)="goBack.emit()">
         <mat-icon class='_material-icons'>arrow_back</mat-icon>
     </button>
     <div class="title _material-icons _margin_left">ADD EXPENSE</div>
@@ -8,8 +8,16 @@
             <p class='_material-icons'>SAVE</p>
         </button>
     </div>
-    <mat-menu #more="matMenu" yPosition="above">
-        <button mat-menu-item>Add friends on Splitwise</button>
-        <button mat-menu-item>Create a group</button>
-    </mat-menu>
 </div>
+
+
+<form class="example-form">
+    <div class="_w-100 _flex-box _p-10" style="border-bottom: 1px solid gray">
+            <label> With you and: </label>
+            <input type="text" placeholder="name" class="_custom-input">
+    </div>
+
+    <mat-form-field class="example-full-width">
+        <textarea matInput placeholder="Leave a comment"></textarea>
+    </mat-form-field>
+</form>

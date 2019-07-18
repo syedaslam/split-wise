@@ -1,44 +1,49 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
   //flower:string="rose";
 
 
-replied:boolean;
+  replied: boolean;
   title = 'split-wise';
   toggle: (boolean) = false;
-  isAddExpns: boolean=false;
-
+  isAddExpns: boolean = false;
+  indexTab = 0;
   list = [
     {
       name: 'Home',
       link: 'home-page',
-      imageUrl:"home"
+      imageUrl: "home"
     },
     {
       name: 'Settings',
       link: 'home-page',
-      imageUrl:"settings"
-      
+      imageUrl: "settings"
+
     },
     {
       name: 'Log out',
       link: 'home-page',
-      imageUrl:"power_settings_new"
+      imageUrl: "power_settings_new"
     }
   ]
 
+  constructor() {
+  }
 
-  waitWhatelse(rep){
-    this.replied=rep;
+  ngOnInit(): void {
+  }
+
+  waitWhatelse(rep) {
+    this.replied = rep;
     console.log(rep);
- console.log("hey come");
+    console.log("hey come");
   }
 
 }

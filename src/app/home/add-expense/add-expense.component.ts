@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-add-expense',
@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddExpenseComponent implements OnInit {
 
+  @Output() goBack = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
   }
+
+  
 
 }

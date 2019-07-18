@@ -1,22 +1,21 @@
 <ng-container *ngIf="!isAddExpns">
     <app-main-header></app-main-header>
 <div class="header">
-    <mat-tab-group mat-stretch-tabs animationDuration="0ms" class="example-stretched-tabs
-     custom-lable  .mat-tab-header">
-        <mat-tab label="Friends">
+    <mat-tab-group mat-stretch-tabs animationDuration="0ms" class="example-stretched-tabs custom-lable  .mat-tab-header" [selectedIndex]="indexTab">
+        <mat-tab label="Friends" (click)="indexTab = 0">
             <app-friends></app-friends>
         </mat-tab>
-        <mat-tab label="Groups">
+        <mat-tab label="Groups" (click)="indexTab = 1">
             <app-groups></app-groups>
         </mat-tab>
-        <mat-tab label="Activity">
+        <mat-tab label="Activity" (click)="indexTab = 2">
             <app-activity></app-activity>
         </mat-tab>
     </mat-tab-group>
 </div>
 </ng-container>
 
-<app-add-expense *ngIf="isAddExpns"></app-add-expense>
+<app-add-expense *ngIf="isAddExpns" (goBack)="isAddExpns = false"></app-add-expense>
 
 
 <app-fab-add-expense [gettingDataFromApp]="isAddExpns" (resp)="waitWhatelse($event)" (click)="isAddExpns =replied" *ngIf="!isAddExpns"></app-fab-add-expense>
