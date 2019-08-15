@@ -2,6 +2,7 @@
 
 .groups {
     height: calc(100vh - 110px);
+    width: 100%;
     overflow: auto;
     background-color: white;
 }
@@ -10,8 +11,36 @@
   padding: 10px;
 }
 
-.group-name {
-  height: 40px;
+.background-group-name{
   font-weight: 500;
-  padding: 5px 0;
+  background-color: rgb(229, 255, 0);
+  border-top-right-radius:10px;
+  padding: 10px;
 }
+.background-namePhone-list{
+  background-color: rgb(0, 255, 255);
+  border-radius: 10px;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  padding: 5px
+}
+.background-namePhone-individual{
+  padding: 10px;
+  border-bottom: 1px solid rgb(155, 143, 143);
+
+}
+
+
+p {
+  display: none;
+  background-color: rgb(255, 0, 0);
+  padding: 20px;
+}
+
+ .background-group-name:hover p {
+  display: inline;
+  border-radius: 5px;
+  border-bottom-left-radius: 0;
+  padding: 1px 3px;
+}
+

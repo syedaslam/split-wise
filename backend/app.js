@@ -7,8 +7,10 @@ const mongoose = require('mongoose');
 
 const app = express();
 
+//  mongo credencials here...............
 
 
+// ..............................................
 
 
 // To parse the json data

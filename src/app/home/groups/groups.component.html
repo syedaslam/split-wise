@@ -1,11 +1,17 @@
-<div class="groups">
-  <div class="group-cont" *ngFor="let group of groupList">
-    <div class="group-name">
+<div class="groups ">
+  <div class="group-cont  "  *ngFor="let group of groupList">
+    <div class="background-group-name">
       {{group.groupName}}
+      <p>Group :  {{group.groupName}}</p>
     </div>
-    <div *ngFor="let friend of group.friendsList">
-      <div> {{friend.name}} </div>
-      <div> {{friend.phone}} </div>
+    <div class="background-namePhone-list">
+        <div *ngFor="let friend of group.friendsList" class="background-namePhone-individual">
+            <span>    {{friend.name}}
+                {{friend.phone}} </span>
+         
+          </div>
+
     </div>
+   
   </div>
 </div>
