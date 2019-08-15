@@ -8,7 +8,6 @@ const mongoose = require('mongoose');
 const app = express();
 
 
-// mongo conntectivity here..............
 
 
 
