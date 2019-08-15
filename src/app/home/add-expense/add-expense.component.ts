@@ -14,6 +14,4 @@ export class AddExpenseComponent implements OnInit {
   ngOnInit() {
   }
 
-  
-
 }

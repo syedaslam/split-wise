@@ -19,7 +19,6 @@ import { AddExpenseComponent } from './home/add-expense/add-expense.component';
     SharedModule,
     HomeModule
   ],
- 
   providers: [],
   bootstrap: [AppComponent]
 })

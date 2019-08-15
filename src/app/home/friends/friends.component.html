@@ -1,14 +1,52 @@
 <div class="friends">
-   <div class="_flex-box header-cont _w-100">
+  <div class="_flex-box header-cont _w-100">
     <div style="background: url(/assets/images/split-wise-logo.png)" class="default-logo"></div>
     <div class="details _m-10">
-        <div> TOTAL BALANCE</div>
-        <div> you are owned Rs. 500.00 </div>
+      <div> TOTAL BALANCE</div>
+      <div> you are owed Rs. 500.00 </div>
     </div>
     <div class="filter _ml-auto">
-        <button mat-icon-button>
-            <mat-icon>filter_list</mat-icon>
-        </button>
+      <button mat-stroked-button (click)="createUpdateFriends(null)">
+        Create Friends
+      </button>
+      <button mat-stroked-button (click)="isCreatingGroup = true">
+        Create Group
+      </button>
+      <button mat-icon-button>
+        <mat-icon>filter_list</mat-icon>
+      </button>
     </div>
-   </div>
+  </div>
+  <div class="friends-list">
+    <div class="friends-header _flex-box">
+      <span *ngIf="!isCreatingGroup">Friends List</span>
+     <ng-container *ngIf="isCreatingGroup">
+        <mat-form-field class="example-full-width" >
+            <input matInput placeholder="Group Name" [(ngModel)]="groupName">
+          </mat-form-field>
+          <button class="_ml-auto" mat-stroked-button
+          (click)="isCreatingGroup = false">
+              Cancle
+          </button>
+          <button  color="primary" mat-stroked-button (click)="createGroup()">
+              Create
+          </button>
+     </ng-container>
+
+    </div>
+    <div class="_flex-box" *ngFor="let friend of friends; index as i">
+      <p style="padding: 0 5px; min-width: 40px;"> {{ i < 9 ? '0' : ''}}{{i + 1}} ) </p>
+      <p class="items"> {{friend.name ? friend.name : '-'}} </p>
+      <p class="items"> {{friend.phone ? friend.phone : '-'}} </p>
+      <button mat-icon-button (click)="createUpdateFriends(friend)">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button (click)="deleteUser(friend._id)">
+        <mat-icon>delete</mat-icon>
+      </button>
+      <div style="margin: 0 5px">
+        <mat-checkbox *ngIf="isCreatingGroup" (change)="selectedFriend($event, friend)"></mat-checkbox>
+      </div>
+    </div>
+  </div>
 </div>

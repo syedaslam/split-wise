@@ -16,5 +16,39 @@
 }
 
 .header-cont {
-    height: 60px;
+  position: sticky;
+  top: 0;
+  height: 60px;
+  border-bottom: 1px solid $gray-color;
+  background-color: white;
+  z-index: 2;
+}
+
+.friends-list {
+  height: calc(100vh - 170px);
+  width: 100%;
+  padding: 10px;
+  overflow: auto;
+}
+
+
+.items {
+  padding: 0 10px;
+  min-width: 150px;
+  line-height: 34px;
+}
+
+.filter {
+  button {
+    margin: 0 5px;
+  }
+}
+
+.friends-header {
+  height: 60px;
+  width: 100%;
+  padding: 0 10px;
+  button {
+    margin: 0 5px;
+  }
 }

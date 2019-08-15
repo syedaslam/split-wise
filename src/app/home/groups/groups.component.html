@@ -1,3 +1,11 @@
 <div class="groups">
-
+  <div class="group-cont" *ngFor="let group of groupList">
+    <div class="group-name">
+      {{group.groupName}}
+    </div>
+    <div *ngFor="let friend of group.friendsList">
+      <div> {{friend.name}} </div>
+      <div> {{friend.phone}} </div>
+    </div>
+  </div>
 </div>

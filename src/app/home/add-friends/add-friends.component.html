@@ -1,1 +1,13 @@
-<p>add-friends works!</p>
+<h1 mat-dialog-title> Add Friend </h1>
+<div mat-dialog-content>
+  <mat-form-field >
+    <input matInput [(ngModel)]="name" placeholder="name">
+  </mat-form-field>
+  <mat-form-field >
+    <input matInput [(ngModel)]="phone" placeholder="phone">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions class="bottom-footer">
+  <button  mat-stroked-button (click)="onSave('cancle')">cancle</button>
+  <button mat-stroked-button  color="primary" (click)="onSave()">Create</button>
+</div>

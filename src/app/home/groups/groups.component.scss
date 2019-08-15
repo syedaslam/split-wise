@@ -2,6 +2,16 @@
 
 .groups {
     height: calc(100vh - 110px);
+    overflow: auto;
     background-color: white;
+}
 
+.group-cont {
+  padding: 10px;
+}
+
+.group-name {
+  height: 40px;
+  font-weight: 500;
+  padding: 5px 0;
 }

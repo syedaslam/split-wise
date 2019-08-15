@@ -1,4 +1,4 @@
-import { Component,EventEmitter, OnInit, Input, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-fab-add-expense',
@@ -6,35 +6,25 @@ import { Component,EventEmitter, OnInit, Input, Output } from '@angular/core';
   styleUrls: ['./fab-add-expense.component.scss']
 })
 export class FabAddExpenseComponent implements OnInit {
+  // to understand angular from app to cust
+  @Input() gettingDataFromApp: boolean; // @Input(proposerflower)myNme:string;
 
-//to understand angular from app to cust
-@Input() gettingDataFromApp:boolean;//@Input(proposerflower)myNme:string;
+  // b0) cutom to app
 
-// b0) cutom to app
+  reply: boolean = !this.gettingDataFromApp; // b1)
 
-reply:boolean=!this.gettingDataFromApp;// b1)
+  // emmit data for event bibding
+  // resp=new EventEmitter();// b2)
+  @Output() resp = new EventEmitter(); // b4)
 
-
-//emmit data for event bibding
-// resp=new EventEmitter();// b2)
-@Output() resp=new EventEmitter();// b4)
-
-
-
-
-
-
-
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
-    console.log("Iam in Love Component");
+    console.log('Iam in Love Component');
     console.log(this.gettingDataFromApp);
-    console.log("repliead data is true = "+this.reply);
+    console.log('repliead data is true = ' + this.reply);
 
-     //sending fromcustom to appCustomComponent
-     this.resp.emit(this.reply);// b3) creating event $event
-
+    // sending fromcustom to appCustomComponent
+    this.resp.emit(this.reply); // b3) creating event $event
   }
-
 }

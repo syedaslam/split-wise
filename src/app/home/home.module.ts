@@ -18,6 +18,7 @@ import { SharedModule } from '../shared/shared.module';
   ],
   exports: [
     FriendsComponent, GroupsComponent, ActivityComponent, AddExpenseComponent, AddFriendsComponent, CreateGroupComponent
-  ]
+  ],
+  entryComponents: [AddFriendsComponent]
 })
 export class HomeModule { }

@@ -7,6 +7,10 @@ import {MatMenuModule} from '@angular/material/menu';
 import { FabAddExpenseComponent } from './components/fab-add-expense/fab-add-expense.component';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatDialogModule} from '@angular/material/dialog';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 
 
@@ -15,9 +19,9 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 const chareMyMaterialdesignDepen =
   [
     BrowserAnimationsModule,
-    MatIconModule,
-    MatButtonModule,MatTabsModule, MatMenuModule,
-    MatInputModule, MatFormFieldModule
+    MatIconModule, FormsModule,
+    MatButtonModule, MatTabsModule, MatMenuModule, MatCheckboxModule,
+    MatInputModule, MatFormFieldModule, MatDialogModule, HttpClientModule
   ];
 
 
@@ -27,6 +31,6 @@ const chareMyMaterialdesignDepen =
     chareMyMaterialdesignDepen
   ],
   exports: [
-    chareMyMaterialdesignDepen,FabAddExpenseComponent]
+    chareMyMaterialdesignDepen, FabAddExpenseComponent]
 })
 export class SharedModule { }

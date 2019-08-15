@@ -10,12 +10,24 @@
 
 body {
     background-color: $app-bg-color;
-    
+
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  background-color: rgb(235, 231, 231);
+}
+
+*::-webkit-scrollbar-thumb {
+  width: 8px;
+  background-color: rgba(255, 0, 191, 0.678);
+  border-radius: 50px;
 }
 
 ._material-icons{
     color:white;
 }
+
 ._flex-box {
     display: flex;
     align-items: center;
@@ -42,8 +54,9 @@ body {
 }
 
 ._ml-auto {
-    margin-left: auto;
+    margin-left: auto !important;
 }
+
  ._margin{
    margin: 2px;
  }
@@ -55,6 +68,7 @@ body {
  ._m-s {
      margin: 0 10px;
  }
+
  ._margin-top-bottom{
      margin:2px 0;
 }
@@ -69,10 +83,11 @@ body {
 ._mt-10 {
     margin-top: 10px;
 }
+
 ._mb-10 {
     margin-bottom: 10px;
 }
-    
+
 ._p-10 {
     padding: 10px;
 }
@@ -92,6 +107,7 @@ body {
 ._h-100{
     height:100vh;
 }
+
 ._shadow{
     border: 1px;
     box-shadow: 0px 5px 4px #888888;

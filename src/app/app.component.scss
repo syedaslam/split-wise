@@ -2,6 +2,7 @@
 
 .header {
     background-color: $app-theam;
+    height: 100%;
 }
 
 .title {
@@ -10,8 +11,8 @@
 }
 
 // ::ng-deep .custom-lable .mat-tab-label{
-//     color: white !important; 
-//     font-weight: 600; 
+//     color: white !important;
+//     font-weight: 600;
 // }
 
 // ::ng-deep .mat-ink-bar {
@@ -56,8 +57,9 @@
 }
 
 .sidenav-cont {
-    height: calc(100% - 205px);
-    color: black;
+  height: calc(100% - 160px);
+  color: black;
+  background: white;
 }
 
 .items {
@@ -65,3 +67,4 @@
         text-align: left;
     }
 }
+
