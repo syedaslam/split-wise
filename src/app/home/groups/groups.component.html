@@ -1,17 +1,22 @@
-<div class="groups ">
-  <div class="group-cont  "  *ngFor="let group of groupList">
+<div class="main-div">
+  <div class="group-cont  " *ngFor="let group of groupList">
     <div class="background-group-name">
       {{group.groupName}}
-      <p>Group :  {{group.groupName}}</p>
+      <p>Group : {{group.groupName}}</p>
     </div>
     <div class="background-namePhone-list">
-        <div *ngFor="let friend of group.friendsList" class="background-namePhone-individual">
-            <span>    {{friend.name}}
-                {{friend.phone}} </span>
-         
-          </div>
-
+      <div *ngFor="let friend of group.friendsList" class="background-namePhone-individual">
+        <div>
+          <span class="circle-box-sizee" style="  background: url(../../../assets/images/split-wise-logo.png)no-repeat;"></span>
+        </div>
+        <div>
+          <h4>{{friend.name}}</h4>
+          {{friend.phone}}
+        </div>
+      </div>
     </div>
-   
+    <br>
+
   </div>
+
 </div>
