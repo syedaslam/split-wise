@@ -6,7 +6,7 @@
   width: 100%;
   overflow: auto;
   // background-color: rgb(255, 255, 255);
-  background: linear-gradient(to top left, #ff6600 0%, #0066cc 100%);
+  background: linear-gradient(to right, #eaf5f8 0%, #eceae7 100%);
   display: flex;
   align-items: center;
   text-align: center;
@@ -19,7 +19,7 @@
   display: flex;
   height: 60vh;
   width: 50vw;
-  margin-top: 100px;
+  margin-top: 20px;
  flex-direction: column;
  text-align: left;
 
@@ -48,7 +48,7 @@
 
 }
 .background-namePhone-individual{
-  padding: 15px;
+  padding: 10px;
   margin-bottom: 5px;
   border-bottom: 1px dotted rgb(206, 136, 5);
   display: flex;
@@ -58,7 +58,8 @@
 
 p {
   display: none;
-  background: linear-gradient(to right, #0099cc 0%, #ff6600 100%);
+  // background: linear-gradient(to right, #0099cc 0%, #ff6600 100%);
+  background: linear-gradient(to right, #5f6769 0%, #92908e 100%);
   padding: 20px;
 }
 
@@ -74,5 +75,5 @@ p {
   background-size: cover !important;
   border-radius: 100%;
   border: 3px solid #009999;
-  margin: 0 10px;
+  margin: 0 5px;
 }
