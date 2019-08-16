@@ -3,6 +3,8 @@ import { AddFriendsComponent } from '../add-friends/add-friends.component';
 import { MatDialog } from '@angular/material/dialog';
 import { ApiService } from 'src/app/shared/services/api.service';
 import { MatCheckboxChange } from '@angular/material/checkbox';
+import { Subject } from 'rxjs';
+import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-friends',
@@ -14,8 +16,16 @@ export class FriendsComponent implements OnInit {
   groupName: string;
   isCreatingGroup: (boolean);
   gropuList: any = [];
+  searchkeyObs = new Subject<string>();
 
-  constructor(public dialog: MatDialog, private apiService: ApiService) {}
+  constructor(public dialog: MatDialog, private apiService: ApiService) {
+    this.searchkeyObs.pipe(
+      debounceTime(500),
+      distinctUntilChanged())
+      .subscribe(value => {
+        this.searchFriend(value);
+      });
+  }
 
   ngOnInit() {
     this.getFriendsList();
@@ -93,5 +103,11 @@ export class FriendsComponent implements OnInit {
       });
     }
     console.log(this.gropuList);
+  }
+
+  searchFriend(searchKey) {
+    this.apiService.postData('/api/split', {search: searchKey}).subscribe( res => {
+      this.friends = res['users'];
+    });
   }
 }

@@ -5,6 +5,15 @@
       <div> TOTAL BALANCE</div>
       <div> you are owed Rs. 500.00 </div>
     </div>
+    <div class="_flex-box" style="margin-left: 20px; margin-top: 15px">
+        <button mat-icon-button>
+            <mat-icon>search</mat-icon>
+          </button>
+      <mat-form-field class="example-full-width" >
+        <input type="search" matInput placeholder="search here..." #searchKey
+        (keyup)="searchkeyObs.next(searchKey.value)">
+      </mat-form-field>
+    </div>
     <div class="filter _ml-auto">
       <button mat-stroked-button (click)="createUpdateFriends(null)">
         Create Friends

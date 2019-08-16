@@ -7,7 +7,21 @@ const router = express.Router();
 
 
 router.post('', (req, res, next) => {
-  console.log(req);
+    if (req.body.search === '') {
+      apiData.find().then( result => {
+        res.status(200).json({
+          message: 'friends fetched sucessfully',
+          users: result
+        })
+      })
+    } else if (req.body.search) {
+    apiData.find({name: { $regex: req.body.search, $options: 'i' }}).then( result => {
+      res.status(200).json({
+        message: 'friends fetched sucessfully',
+        users: result
+      })
+    })
+  } else if (req.body.name) {
   const data = new apiData({
     name: req.body.name,
     phone: req.body.phone
@@ -15,10 +29,10 @@ router.post('', (req, res, next) => {
   data.save().then( userCreated => {
     res.status(200).json({message: 'added successfully', status: 'success'});
   })
+  }
 })
 
 router.post('/group', (req, res, next) => {
-  console.log(req);
   const data = new groupData({
     groupName: req.body.groupName,
     friendsList: req.body.friendsList
@@ -32,7 +46,7 @@ router.post('/group', (req, res, next) => {
 router.get('', (req, res, next) => {
   apiData.find().then( obj => {
     res.status(200).json({
-      message: 'post fetched sucessfully',
+      message: 'friends fetched sucessfully',
       users: obj
     });
   })
@@ -41,7 +55,7 @@ router.get('', (req, res, next) => {
 router.get('/group', (req, res, next) => {
   groupData.find().then( obj => {
     res.status(200).json({
-      message: 'post fetched sucessfully',
+      message: 'groups fetched sucessfully',
       group: obj
     });
   })
@@ -49,9 +63,7 @@ router.get('/group', (req, res, next) => {
 
 router.delete('/:id', (req, res, next) => {
   apiData.deleteOne({_id: req.params.id}).then( result => {
-    console.log('deleting posts');
-    console.log(result);
-    res.status(200).json({message: 'Post Deleted!'});
+    res.status(200).json({message: 'Deleted successfully!'});
   })
 })
 
@@ -61,7 +73,6 @@ router.put('/:id', (req, res, next) => {
     name: req.body.name,
     phone: req.body.phone
   };
-  console.log(data);
   apiData.updateOne({_id: req.body._id}, data).then( result => {
     res.status(200).json({message: 'updated successsfully'});
   });
