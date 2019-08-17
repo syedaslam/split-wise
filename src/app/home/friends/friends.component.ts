@@ -40,7 +40,7 @@ export class FriendsComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log(result);
       if (result) {
-        if (result['_id']) {
+        if (result['_id'] ) {
           this.apiService.updateData('/api/split/' + result['_id'], result).subscribe(res => {
             console.log(res);
             this.getFriendsList();
@@ -59,7 +59,7 @@ export class FriendsComponent implements OnInit {
   getFriendsList() {
     this.apiService.getData('/api/split', {}).subscribe(res => {
       console.log(res);
-      this.friends = res['users'];
+      this.friends = res['friendsList'];
     });
   }
 

@@ -1,7 +1,6 @@
+@import "../../../assets/css/variables";
 
-@import '../../../assets/css/variables';
-
-.main-div{
+.main-div {
   height: calc(100vh - 110px);
   width: 100%;
   overflow: auto;
@@ -13,48 +12,41 @@
   flex-direction: column;
 }
 
-
-
 .group-cont {
   display: flex;
   height: 60vh;
   width: 50vw;
   margin-top: 20px;
- flex-direction: column;
- text-align: left;
-
+  flex-direction: column;
+  text-align: left;
+  border-radius: 12px;
+  box-shadow: 0px 0px 4px 0 rgb(165, 162, 162);
 }
 
-.background-group-name{
-  // width: 500px;
+.background-group-name {
   width: 100%;
   font-weight: 500;
-  background-color: #8bc34a94;
-  border-top-right-radius:10px;
+  border-top-right-radius: 10px;
   padding: 10px;
- box-shadow: 4px 8px 4px 0  rgb(165, 162, 162);
-
+  border-bottom: 1px solid #dddddd;
 }
-.background-namePhone-list{
+.background-namePhone-list {
   // width: 500px;
   width: 100%;
-  background-color: #ffd40091;
+  // background-color: #ffd40091;
   border-radius: 10px;
   border-top-right-radius: 0;
   border-top-left-radius: 0;
   padding: 5px;
   overflow: auto;
- box-shadow: 4px 8px 4px 0  rgb(165, 162, 162);
-
 }
-.background-namePhone-individual{
+.background-namePhone-individual {
   padding: 10px;
   margin-bottom: 5px;
-  border-bottom: 1px dotted rgb(206, 136, 5);
+  // border-bottom: 1px dotted rgb(206, 136, 5);
   display: flex;
-  align-items: center
+  align-items: center;
 }
-
 
 p {
   display: none;
@@ -63,17 +55,19 @@ p {
   padding: 20px;
 }
 
- .background-group-name:hover p {
+.background-group-name:hover p {
   display: inline;
   border-radius: 5px;
   border-bottom-left-radius: 0;
   padding: 1px 3px;
 }
-.circle-box-sizee{
-  padding:10px 16px;
+.circle-box-sizee {
+  padding: 10px 16px;
   background-position: center !important;
   background-size: cover !important;
   border-radius: 100%;
   border: 3px solid #009999;
   margin: 0 5px;
+  height: 40px;
+  width: 40px;
 }

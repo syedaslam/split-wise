@@ -47,7 +47,7 @@ router.get('', (req, res, next) => {
   apiData.find().then( obj => {
     res.status(200).json({
       message: 'friends fetched sucessfully',
-      users: obj
+      friendsList: obj
     });
   })
 })

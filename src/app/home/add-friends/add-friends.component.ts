@@ -30,7 +30,7 @@ export class AddFriendsComponent implements OnInit {
     if (type !== 'cancle') {
     this.dialogRef.close({name: this.name, phone: this.phone, _id: this.id ? this.id : null});
     } else {
-      this.dialogRef.close(undefined);
+      this.dialogRef.close(null);
     }
   }
 

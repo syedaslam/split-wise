@@ -11,6 +11,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { ConformationDailogComponent } from './components/conformation-dailog/conformation-dailog.component';
 
 
 
@@ -26,7 +27,7 @@ const chareMyMaterialdesignDepen =
 
 
 @NgModule({
-  declarations: [FabAddExpenseComponent],
+  declarations: [FabAddExpenseComponent, ConformationDailogComponent],
   imports: [
     chareMyMaterialdesignDepen
   ],
