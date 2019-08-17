@@ -31,7 +31,8 @@
         <div style="font-size: 14px">vishu@gmail.com</div>
     </div>
     <div class="sidenav-cont">
-        <div *ngFor="let item of list" class="items">
+        <!-- i vishnu added here clickk -->
+        <div *ngFor="let item of list" class="items"  (click)="togglee = false">
             <button mat-button class="_w-100">
                <mat-icon>{{item.imageUrl}}</mat-icon> {{item.name}}
                {{item.link}}

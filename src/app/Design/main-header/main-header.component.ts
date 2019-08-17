@@ -15,18 +15,19 @@ export class MainHeaderComponent implements OnInit {
       name: 'Home',
       link: 'home-page',
       imageUrl:"home",
-      path:'<app-account-settings>'
+      path:'<app-groups>'
     },
     {
       name: 'Settings',
       link: 'home-page',
-      imageUrl:"settings"
-      
+      imageUrl:"settings",
+      path:'<app-account-settings>'
     },
     {
       name: 'Log out',
       link: 'home-page',
-      imageUrl:"power_settings_new"
+      imageUrl:"power_settings_new",
+      path:'<app-account-settings>'
     }
   ]
 
