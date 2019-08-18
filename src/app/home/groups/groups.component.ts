@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/shared/services/api.service';
+import { MatDialog } from '@angular/material/dialog';
+import { ConformationDailogComponent } from 'src/app/shared/components/conformation-dailog/conformation-dailog.component';
+
 
 @Component({
   selector: 'app-groups',
@@ -10,7 +13,7 @@ export class GroupsComponent implements OnInit {
 
   groupList: any;
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService,public dialog: MatDialog) { }
 
   ngOnInit() {
     this.getGroups();
@@ -23,6 +26,11 @@ export class GroupsComponent implements OnInit {
     });
   }
 
+  deleteGroup(): void {
+     this.dialog.open(ConformationDailogComponent, {
+      width: '250px',
+    });
 
+  }
 
 }

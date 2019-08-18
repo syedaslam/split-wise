@@ -32,6 +32,8 @@ const chareMyMaterialdesignDepen =
     chareMyMaterialdesignDepen
   ],
   exports: [
-    chareMyMaterialdesignDepen, FabAddExpenseComponent]
+    chareMyMaterialdesignDepen, FabAddExpenseComponent],
+    entryComponents: [ConformationDailogComponent]
+
 })
 export class SharedModule { }

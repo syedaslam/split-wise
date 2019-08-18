@@ -1,19 +1,32 @@
 <div class="main-div">
-  <div class="group-cont  " *ngFor="let group of groupList">
-    <div class="background-group-name">
-      {{group.groupName}}
-      <p>Group : {{group.groupName}}</p>
-    </div>
-    <div class="background-namePhone-list">
-      <div *ngFor="let friend of group.friendsList" class="background-namePhone-individual">
-        <div class="circle-box-sizee" style="  background: url(../../../assets/images/split-wise-logo.png)no-repeat;">
+    <div class="group-cont  " *ngFor="let group of groupList">
+      <div class="background-group-name">
+        <div  class="gName" style="height: auto;width:auto">
+          {{group.groupName}}
+          <p>Group : {{group.groupName}}</p>
         </div>
-        <div>
-          <h4>{{friend.name}}</h4>
-          {{friend.phone}}
+        <div  style="margin-left:auto">
+            <button  mat-icon-button>
+                <mat-icon>edit</mat-icon>
+                <p>Edit : {{group.groupName}}</p>
+              </button>
+              <button   mat-icon-button  (click)="deleteGroup()">
+                <mat-icon>delete</mat-icon>
+                <p>Delete : {{group.groupName}}</p>
+              </button>
         </div>
       </div>
+      <div class="background-namePhone-list">
+        <div *ngFor="let friend of group.friendsList" class="background-namePhone-individual">
+          <div class="circle-box-sizee" style="  background: url(../../../assets/images/split-wise-logo.png)no-repeat;">
+          </div>
+          <div>
+            <h4>{{friend.name}}</h4>
+            {{friend.phone}}
+          </div>
+        </div>
+      </div>
+      <br>
     </div>
-    <br>
   </div>
-</div>
+
