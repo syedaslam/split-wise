@@ -5,6 +5,7 @@ import { ApiService } from 'src/app/shared/services/api.service';
 import { MatCheckboxChange } from '@angular/material/checkbox';
 import { Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
+import { ConformationDailogComponent } from 'src/app/shared/components/conformation-dailog/conformation-dailog.component';
 
 @Component({
   selector: 'app-friends',
@@ -14,14 +15,16 @@ import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
 export class FriendsComponent implements OnInit {
   friends: any[] = [];
   groupName: string;
-  isCreatingGroup: (boolean);
+  isCreatingGroup: boolean;
   gropuList: any = [];
   searchkeyObs = new Subject<string>();
 
   constructor(public dialog: MatDialog, private apiService: ApiService) {
-    this.searchkeyObs.pipe(
-      debounceTime(500),
-      distinctUntilChanged())
+    this.searchkeyObs
+      .pipe(
+        debounceTime(500),
+        distinctUntilChanged()
+      )
       .subscribe(value => {
         this.searchFriend(value);
       });
@@ -40,11 +43,13 @@ export class FriendsComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log(result);
       if (result) {
-        if (result['_id'] ) {
-          this.apiService.updateData('/api/split/' + result['_id'], result).subscribe(res => {
-            console.log(res);
-            this.getFriendsList();
-          });
+        if (result['_id']) {
+          this.apiService
+            .updateData('/api/split/' + result['_id'], result)
+            .subscribe(res => {
+              console.log(res);
+              this.getFriendsList();
+            });
         } else {
           this.apiService.postData('/api/split', result).subscribe(res => {
             if (res['status'] === 'success') {
@@ -64,37 +69,47 @@ export class FriendsComponent implements OnInit {
   }
 
   deleteUser(userId) {
-    console.log(userId);
-    this.apiService.deleteData('/api/split/' + userId, {}).subscribe(res => {
-      console.log(res);
-      this.getFriendsList();
+    const dialogRef = this.dialog.open(ConformationDailogComponent, {
+      width: '300px',
+      data: {message: 'Do you want to delete thes friend?'}
+    });
+    dialogRef.afterClosed().subscribe( check => {
+      if (check === 'yes') {
+        this.apiService.deleteData('/api/split/' + userId, {}).subscribe(res => {
+            this.getFriendsList();
+          });
+      }
     });
   }
 
   createGroup() {
-    this.apiService.postData('/api/split/group',
-     {groupName: this.groupName, friendsList: this.gropuList}).subscribe( res => {
-      if (res['status'] === 'success') {
-       this.isCreatingGroup = false;
-      }
-     });
+    this.apiService
+      .postData('/api/split/group', {
+        groupName: this.groupName,
+        friendsList: this.gropuList
+      })
+      .subscribe(res => {
+        if (res['status'] === 'success') {
+          this.isCreatingGroup = false;
+        }
+      });
   }
 
   selectedFriend(check: MatCheckboxChange, friend) {
     let isNotExist = true;
     if (check.checked) {
       if (this.gropuList.length > 0) {
-      this.gropuList.forEach(element => {
-        if (element['_id'] === friend['_id']) {
-          isNotExist = false;
+        this.gropuList.forEach(element => {
+          if (element['_id'] === friend['_id']) {
+            isNotExist = false;
+          }
+        });
+        if (isNotExist) {
+          this.gropuList.push(friend);
         }
-      });
-      if (isNotExist) {
+      } else {
         this.gropuList.push(friend);
       }
-    } else {
-      this.gropuList.push(friend);
-    }
     } else {
       this.gropuList.forEach((element, index) => {
         if (element['_id'] === friend['_id']) {
@@ -106,8 +121,10 @@ export class FriendsComponent implements OnInit {
   }
 
   searchFriend(searchKey) {
-    this.apiService.postData('/api/split', {search: searchKey}).subscribe( res => {
-      this.friends = res['users'];
-    });
+    this.apiService
+      .postData('/api/split', { search: searchKey })
+      .subscribe(res => {
+        this.friends = res['users'];
+      });
   }
 }

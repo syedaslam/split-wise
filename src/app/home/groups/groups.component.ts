@@ -29,6 +29,7 @@ export class GroupsComponent implements OnInit {
   deleteGroup(): void {
      this.dialog.open(ConformationDailogComponent, {
       width: '250px',
+      data: {message: 'Do you want do delete this Group'}
     });
 
   }

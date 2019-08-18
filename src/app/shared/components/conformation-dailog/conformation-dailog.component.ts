@@ -8,9 +8,20 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class ConformationDailogComponent implements OnInit {
 
-  constructor() { }
+  message: string;
+
+  constructor(public dialogRef: MatDialogRef<ConformationDailogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit() {
+    console.log(this.data);
+    if (this.data) {
+      this.message = this.data['message'];
+    }
+  }
+
+  onClose(condt) {
+    this.dialogRef.close(condt);
   }
 
 }

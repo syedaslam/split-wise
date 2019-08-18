@@ -27,7 +27,6 @@
 .friends-list {
   height: calc(100vh - 170px);
   width: 100%;
-  padding: 10px;
   overflow: auto;
 }
 
@@ -45,9 +44,14 @@
 }
 
 .friends-header {
+  position: sticky;
+  top: 0;
+  border-bottom: 1px solid $gray-color;
+  background-color: white;
   height: 60px;
   width: 100%;
   padding: 0 10px;
+  z-index: 4;
   button {
     margin: 0 5px;
   }
