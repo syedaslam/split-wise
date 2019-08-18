@@ -8,17 +8,7 @@ const mongoose = require('mongoose');
 const app = express();
 
 //  mongo credencials here...............
-mongoose
-  .connect(
-    'mongodb+srv://max:5N7MGCWtNU6isy3I@cluster0-8dont.mongodb.net/test?retryWrites=true&w=majority',
-    { useNewUrlParser: true }
-  )
-  .then(() => {
-    console.log('connected to database');
-  })
-  .catch(() => {
-    console.log('connection filed');
-  });
+
 
 // ..............................................
 
