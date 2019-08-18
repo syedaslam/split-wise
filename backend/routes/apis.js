@@ -33,6 +33,21 @@ router.post('', (req, res, next) => {
 })
 
 router.post('/group', (req, res, next) => {
+  if (req.body.search === '') {
+    groupData.find().then( result => {
+      res.status(200).json({
+        message: 'groups fetched sucessfully',
+        group: result
+      })
+    })
+  } else if (req.body.search) {
+  apiData.find({name: { $regex: req.body.search, $options: 'i' }}).then( result => {
+    res.status(200).json({
+      message: 'groups fetched sucessfully',
+      group: result
+    })
+  })
+} else if (req.body.name) {
   const data = new groupData({
     groupName: req.body.groupName,
     friendsList: req.body.friendsList
@@ -40,6 +55,7 @@ router.post('/group', (req, res, next) => {
   data.save().then( userCreated => {
     res.status(200).json({message: 'added successfully', status: 'success'});
   })
+}
 })
 
 
