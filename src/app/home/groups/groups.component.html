@@ -1,5 +1,5 @@
 <div class="main-div">
-    <div class="group-cont  " *ngFor="let group of groupList">
+    <div class="group-cont  " *ngFor="let group of groupList;index as i">
       <div class="background-group-name">
         <div  class="gName" style="height: auto;width:auto">
           {{group.groupName}}
@@ -10,7 +10,7 @@
                 <mat-icon>edit</mat-icon>
                 <p>Edit : {{group.groupName}}</p>
               </button>
-              <button   mat-icon-button  (click)="deleteGroup()">
+              <button   mat-icon-button  (click)="deleteGroup(group._id)">
                 <mat-icon>delete</mat-icon>
                 <p>Delete : {{group.groupName}}</p>
               </button>

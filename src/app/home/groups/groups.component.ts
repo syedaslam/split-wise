@@ -26,12 +26,19 @@ export class GroupsComponent implements OnInit {
     });
   }
 
-  deleteGroup(): void {
-     this.dialog.open(ConformationDailogComponent, {
+  deleteGroup(gName): void {
+    const dialogRef=this.dialog.open(ConformationDailogComponent, {
       width: '250px',
       data: {message: 'Do you want do delete this Group'}
     });
-
+    dialogRef.afterClosed().subscribe( check => {
+      if (check === 'yes') {
+        this.apiService.deleteData('/api/split/group/' + gName, {}).subscribe(res => {
+          console.log(res);
+          this.getGroups();
+          });
+      }
+    });
   }
 
 }
