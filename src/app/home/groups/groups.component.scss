@@ -12,7 +12,39 @@
   flex-direction: column;
 }
 
+.search-bar {
+  position: absolute;
+  width: 20vw;
+  border: 2px solid #3b3a3a;
+  background: #2bbfe4;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  background: #3b3a3a;
+  left: 20px;
+  top: 50px;
+  margin-left: auto;
+  .material-icons {
+    width: 3vw;
+    text-align: center;
+    height: 35px;
+    background: #d7d7d7;
+    margin-left: auto;
+    padding: 5px;
+  };
+  .srch-box {
+    font-size: large;
+    width: 15vw;
+    border: 0;
+    background: white;
+    height: 25px;
+    border-bottom: 1px solid purple;
+  };
+
+}
+
 .group-cont {
+  position: relative;
   display: flex;
   height: 60vh;
   width: 50vw;

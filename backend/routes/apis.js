@@ -41,7 +41,7 @@ router.post('/group', (req, res, next) => {
       })
     })
   } else if (req.body.search) {
-  apiData.find({name: { $regex: req.body.search, $options: 'i' }}).then( result => {
+  groupData.find({groupName: { $regex: req.body.search, $options: 'i' }}).then( result => {
     res.status(200).json({
       message: 'groups fetched sucessfully',
       group: result

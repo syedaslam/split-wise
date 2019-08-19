@@ -1,8 +1,12 @@
+
+
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/shared/services/api.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ConformationDailogComponent } from 'src/app/shared/components/conformation-dailog/conformation-dailog.component';
 
+import { Subject } from 'rxjs';
+import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-groups',
@@ -11,9 +15,21 @@ import { ConformationDailogComponent } from 'src/app/shared/components/conformat
 })
 export class GroupsComponent implements OnInit {
 
-  groupList: any;
+  searchkeyObs = new Subject<string>();
 
-  constructor(private apiService: ApiService,public dialog: MatDialog) { }
+  groupList: any=[];
+
+  constructor(private apiService: ApiService,public dialog: MatDialog) {
+
+    this.searchkeyObs
+      .pipe(
+        debounceTime(500),
+        distinctUntilChanged()
+      )
+      .subscribe(value => {
+        this.searchGroup(value);
+      });
+  }
 
   ngOnInit() {
     this.getGroups();
@@ -39,6 +55,17 @@ export class GroupsComponent implements OnInit {
           });
       }
     });
+  }
+
+
+
+  searchGroup(searchKey) {
+    this.apiService
+      .postData('/api/split/group', { search: searchKey })
+      .subscribe(res => {
+        this.groupList = res['group'];
+       console.log(res['group']);
+      });
   }
 
 }

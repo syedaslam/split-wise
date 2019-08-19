@@ -96,6 +96,7 @@ export class FriendsComponent implements OnInit {
   }
 
   selectedFriend(check: MatCheckboxChange, friend) {
+    console.log(check);
     let isNotExist = true;
     if (check.checked) {
       if (this.gropuList.length > 0) {
