@@ -37,11 +37,10 @@
   line-height: 34px;
 }
 
-.filter {
-  button {
-    margin: 0 5px;
-  }
+.group-name {
+  margin-top: 10px;
 }
+
 
 .friends-header {
   position: sticky;
@@ -54,5 +53,26 @@
   z-index: 4;
   button {
     margin: 0 5px;
+  }
+}
+
+.search-bar {
+  border: 1px solid $gray-color;
+  display: flex;
+  align-items: center;
+  background: white;
+  .search-btn {
+    height: 34px;
+    width: 34px;
+    background-color: $gray-color;
+    border: none;
+    margin-left: auto;
+  }
+  .srch-box {
+    border: 0;
+    height: 34px;
+    padding: 0 5px;
+    flex: 1;
+    outline: none;
   }
 }

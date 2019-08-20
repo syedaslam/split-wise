@@ -5,7 +5,8 @@
       <div> TOTAL BALANCE</div>
       <div> you are owed Rs. 500.00 </div>
     </div>
-    <div class="_flex-box" style="margin-left: 20px; margin-top: 15px">
+
+    <!-- <div class="_flex-box" style="margin-left: 20px; margin-top: 15px">
         <button mat-icon-button>
             <mat-icon>search</mat-icon>
           </button>
@@ -13,12 +14,20 @@
         <input type="search" matInput placeholder="search here..." #searchKey
         (keyup)="searchkeyObs.next(searchKey.value)">
       </mat-form-field>
-    </div>
-    <div class="filter _ml-auto">
-      <button mat-stroked-button (click)="createUpdateFriends(null)">
+    </div> -->
+    <div class="filter _flex-box _ml-auto">
+        <div class="search-bar _m-r-l">
+            <input type="search" class="srch-box"  placeholder="search here..." #searchKey
+              (keyup)="searchkeyObs.next(searchKey.value)"
+              (search)="searchkeyObs.next(searchKey.value)">
+            <button class="search-btn">
+              <mat-icon style="margin-top: 2px">search</mat-icon>
+            </button>
+        </div>
+      <button class="_m-r-l" mat-stroked-button (click)="createUpdateFriends(null)">
         Create Friends
       </button>
-      <button mat-stroked-button (click)="isCreatingGroup = true">
+      <button class="_m-r-l" mat-stroked-button (click)="isCreatingGroup = true">
         Create Group
       </button>
       <button mat-icon-button>
@@ -30,7 +39,7 @@
     <div class="friends-header _flex-box">
       <span *ngIf="!isCreatingGroup">Friends List</span>
      <ng-container *ngIf="isCreatingGroup">
-        <mat-form-field class="example-full-width" >
+        <mat-form-field class="group-name" >
             <input matInput placeholder="Group Name" [(ngModel)]="groupName">
           </mat-form-field>
           <button class="_ml-auto" mat-stroked-button
@@ -41,7 +50,6 @@
               Create
           </button>
      </ng-container>
-
     </div>
     <div class="_flex-box" *ngFor="let friend of friends; index as i">
       <p style="padding: 0 5px; min-width: 40px;"> {{ i < 9 ? '0' : ''}}{{i + 1}} ) </p>

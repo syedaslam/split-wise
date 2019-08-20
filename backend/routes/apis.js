@@ -47,7 +47,7 @@ router.post('/group', (req, res, next) => {
       group: result
     })
   })
-} else if (req.body.name) {
+} else if (req.body.groupName) {
   const data = new groupData({
     groupName: req.body.groupName,
     friendsList: req.body.friendsList
