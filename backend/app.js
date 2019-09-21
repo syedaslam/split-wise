@@ -1,9 +1,9 @@
+const path = require('path');
 const express = require('express');
-
-const apiRouters = require('./routes/apis');
-// const groupRouter = require('./routes/group');
+var bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
+const postsRouters = require('./routes/posts');
 
 const app = express();
 
@@ -12,14 +12,12 @@ const app = express();
 // ..............................................
 
 
-// To parse the json data
-var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use('/images', express.static(path.join('../backend/images')));
+
 app.use(bodyParser.json());
 
-
-
-// To access corss origen domain....
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader(
@@ -33,8 +31,6 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use('/api/posts', postsRouters);
 
-
-app.use('/api/split', apiRouters);
-// app.use('/api/split/group', groupRouter);
 module.exports = app;

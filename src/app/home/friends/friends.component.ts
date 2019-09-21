@@ -62,7 +62,7 @@ export class FriendsComponent implements OnInit {
   }
 
   getFriendsList() {
-    this.apiService.getData('/api/split', {}).subscribe(res => {
+    this.apiService.getData('/api/posts', {}).subscribe(res => {
       console.log(res);
       this.friends = res['friendsList'];
     });
